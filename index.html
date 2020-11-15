@@ -104,13 +104,27 @@
       class Juego {
         constructor() {
           this.inicializar()
+          this.generarSecuencia()
         }
         inicializar() {
-          btnEmpezar.classList.add('hide')
+          btnEmpezar.classList.add('hide') //Agregamos la propiedad 'Hide' a nuestro boton
+          this.nivel = 1
+          this.colores = {
+            celeste, //Esto es igual que celeste: celeste
+            violeta,
+            naranja,
+            verde
+          }
+        }
+        generarSecuencia() {
+          //Creamos un atributo nuevo 'secuencia'
+          //Creamos un array de 10 elementos y los llenamos con 0
+          //Multiplicamos cada elemnto del array por entre 0 y 3 con el
+          this.secuencia = new Array(10).fill(0).map(n => Math.floor(Math.random() * 4)) 
         }
       }
       function empezarJuego() {
-        var juego = new Juego()
+        window.juego = new Juego()
       }
     </script>
   </body>
